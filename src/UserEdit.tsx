@@ -5,6 +5,7 @@ import {
   SimpleForm,
   TextInput,
 } from "react-admin";
+import ButtonNumField from "./ButtonNumField";
 import { PostEditActions } from "./PostEditActions";
 
 const UserEdit = (props: ListProps) => (
@@ -14,7 +15,9 @@ const UserEdit = (props: ListProps) => (
       <TextInput source="firstname" />
       <TextInput source="lastname" />
       <TextInput source="email" />
-      <NumberInput source="admin" />
+      {/* NumberInput hidden for value, ButtonNumField for design */}
+      <NumberInput source="admin" style={{ display: "none" }} />
+      <ButtonNumField source="admin" label="Admin" />
     </SimpleForm>
   </Edit>
 );
